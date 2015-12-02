@@ -13,8 +13,8 @@ matrix:
 
 env:
   global:
-    - VERSION='3.6-dev'
-    - ALIAS='nightly'
+    - VERSION='2.7.10'
+    - ALIAS=$VERSION
     - CONFIGURE_OPTS='--enable-unicode=usc4'
 
 install:
