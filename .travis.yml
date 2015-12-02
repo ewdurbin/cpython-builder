@@ -15,6 +15,7 @@ env:
   global:
     - VERSION='3.6-dev'
     - ALIAS='nightly'
+    - CONFIGURE_OPTS='--enable-unicode=usc4'
 
 install:
   - pushd /opt/pyenv/
