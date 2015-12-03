@@ -15,7 +15,6 @@ env:
   global:
     - VERSION='2.7.10'
     - ALIAS=$VERSION
-    - PYTHON_CONFIGURE_OPTS='--enable-unicode=ucs4'
 
 install:
   - pushd /opt/pyenv/
