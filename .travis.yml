@@ -5,16 +5,15 @@ matrix:
     - sudo: required
       services:
         - docker
-    - sudo: required
 
 env:
   matrix:
-    - RELEASE=trusty VERSION=2.7.8
     - RELEASE=trusty VERSION=2.7.9
     - RELEASE=trusty VERSION=2.7.10
-    - RELEASE=precise VERSION=2.7.8
+    - RELEASE=trusty VERSION=3.5.0
     - RELEASE=precise VERSION=2.7.9
     - RELEASE=precise VERSION=2.7.10
+    - RELEASE=precise VERSION=3.5.0
 
 install:
   - pushd /opt/pyenv/
@@ -28,6 +27,8 @@ before_script:
   - 'export OS_NAME=${OS_NAME:-$(lsb_release -is | tr "A-Z" "a-z" || "osx")}'
   - 'export ARCH=${ARCH:-$(uname -m)}'
   - 'export PACKAGES=${PACKAGES:-pip numpy nose pytest mock wheel}'
+  - python -c 'import sysconfig; print(sysconfig.get_config_var("CONFIG_ARGS"));'
+  - python3 -c 'import sysconfig; print(sysconfig.get_config_var("CONFIG_ARGS"));'
 
 script: ./build-python
 
