@@ -24,6 +24,8 @@ fi
 virtualenv --distribute --python=$INSTALL_DEST/$VERSION/bin/python \
   /home/travis/virtualenv/python$VERSION
 
+$INSTALL_DEST/$VERSION/bin/python -c "import sys; opts = {1114111: 'ucs4', 65535: 'ucs2'}; print(opts.get(sys.maxunicode));"
+
 if [[ $ALIAS ]] ; then
   ln -s $HOME/virtualenv/python$VERSION $HOME/virtualenv/python$ALIAS
 fi
