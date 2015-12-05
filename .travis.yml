@@ -27,6 +27,7 @@ before_script:
   - 'export OS_NAME=${OS_NAME:-$(lsb_release -is | tr "A-Z" "a-z" || "osx")}'
   - 'export ARCH=${ARCH:-$(uname -m)}'
   - 'export PACKAGES=${PACKAGES:-pip numpy nose pytest mock wheel}'
+  - sudo apt-get install -y python python3
   - python -c 'import sysconfig; print(sysconfig.get_config_var("CONFIG_ARGS"));'
   - python3 -c 'import sysconfig; print(sysconfig.get_config_var("CONFIG_ARGS"));'
 
