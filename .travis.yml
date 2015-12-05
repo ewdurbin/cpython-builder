@@ -5,19 +5,16 @@ matrix:
     - sudo: required
       services:
         - docker
-      env:
-        - RELEASE=trusty
     - sudo: required
-      env:
-        - RELEASE=precise
 
 env:
   matrix:
-    - VERSION=2.7.8
-    - VERSION=2.7.9
-    - VERSION=2.7.10
-  global:
-    - ALIAS='nightly'
+    - RELEASE=trusty VERSION=2.7.8
+    - RELEASE=trusty VERSION=2.7.9
+    - RELEASE=trusty VERSION=2.7.10
+    - RELEASE=precise VERSION=2.7.8
+    - RELEASE=precise VERSION=2.7.9
+    - RELEASE=precise VERSION=2.7.10
 
 install:
   - pushd /opt/pyenv/
